@@ -1,4 +1,6 @@
 
+Crea un contenedor con la imagen del entorno de ejecución de Lambdas en AWS
+
 Ejecuta 'make' para ayuda
 
 Pasos habituales:

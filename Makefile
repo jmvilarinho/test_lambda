@@ -1,4 +1,4 @@
-NAME = dxc/batch
+NAME = test_aws
 VERSION = latest
 
 APP_NAME=$(shell echo "$(NAME)" | tr -cd '[[:alnum:]]')_$(VERSION)
@@ -18,15 +18,15 @@ build: ## Crea image python3.12
 	docker build -t awslambda:python3.12 -f Dockerfile.python3.12 .
 
 run: ## Run container
-	-docker rm -f test_aws
-	docker run -it --name test_aws -d -v /mnt/c/ExtraHD/test_lambda/aws-lambda:/tmp/pip/  -v /mnt/c/ExtraHD/test_lambda/init.sh:/app/init.sh awslambda:python3.12
-	docker logs test_aws
+	-docker rm -f $(NAME)
+	docker run -it --name $(NAME) -d -v /mnt/c/ExtraHD/test_lambda/aws-lambda:/tmp/pip/  -v /mnt/c/ExtraHD/test_lambda/init.sh:/app/init.sh awslambda:python3.12
+	docker logs $(NAME)
 
 stop: ## Stop container
-	docker rm -f test_aws
+	docker rm -f $(NAME)
 
 shell: ## Run container
-	docker exec -it test_aws /bin/bash
+	docker exec -it $(NAME) /bin/bash
     
 clean:  ## Remove unused images
 	-docker rm `docker ps -a -q`

@@ -10,7 +10,7 @@ COPY requirements.txt /app/
 
 COPY ./app/*.py /app/
 
-RUN dnf install -y zip bash
+RUN dnf install -y zip bash procps findutils
 
 RUN chmod +x /app/entry.sh /app/init.sh
 
