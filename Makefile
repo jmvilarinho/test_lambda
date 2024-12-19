@@ -5,7 +5,7 @@ APP_NAME=$(shell echo "$(NAME)" | tr -cd '[[:alnum:]]')_$(VERSION)
 
 # HELP
 # This will output the help for each task
-# thanks to https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
+# author: jmvilarinho@gmail.com
 .PHONY: help
 
 help: ## This help.

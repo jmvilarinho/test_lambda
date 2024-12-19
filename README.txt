@@ -2,6 +2,9 @@
 Ejecuta 'make' para ayuda
 
 Pasos habituales:
-- crear imagen: make build_git
+- crear imagen: make build
 - ejecuta: make run
 - consola: make shell
+
+One shoot:
+- make build run shell stop
